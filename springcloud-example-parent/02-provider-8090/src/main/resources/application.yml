@@ -11,6 +11,10 @@ eureka:
   # 指定当前客户端在注册中心的名字
   instance:
     instance-id: msc-provider-depart-8090
+    # 设置当前client向Server发送心跳的时间间隔，默认30秒
+#    lease-renewal-interval-in-seconds: 1
+    # 指定让Server认定当前Client已经失效的时间，将来可以从注册表中剔除，默认90秒
+#    lease-expiration-duration-in-seconds: 3
 spring:
   # 指定当前微服务对象暴露的名称
   application:
@@ -53,3 +57,14 @@ info:
   app.name: yw-msc
   app.desc: mic-server-cloud
   author: yw
+
+management:
+  # 开启所有监控终端
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#  # 开启shutdown监控终端
+#  endpoint:
+#    shutdown:
+#      enabled: true
