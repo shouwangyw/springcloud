@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  # 指定当前微服务对外暴露的名称
+  application:
+    name: msc-consumer-depart
+
+eureka:
+  # 指定eureka服务中心
+  client:
+    service-url:
+#      defaultZone: http://localhost:8000/eureka
+      # 集群
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
+
+feign:
+  client:
+    config:
+      default:
+        # 指定Feign连接提供者的超时时限，决定于网络状况
+        connectTimeout: 5000
+        # 指定Feign从请求获取提供者响应的超时时限，决定于提供者的处理时间
+        readTimeout: 5000
+  compression:
+    request:
+      # 开启对请求的压缩
+      enabled: true
+      # 指定对那些MIME类型的文件进行压缩
+      mime-types: ['text/xml', 'application/xml', 'application/json']
+      min-request-size: 2048
+    response:
+      # 开启对客户端响应的压缩
+      enabled: true
+
+# 修改负载均衡策略
+msc-provider-depart: # 要负载均衡的提供者微服务名称
+  ribbon:
+    # 指定要使用的负载均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
