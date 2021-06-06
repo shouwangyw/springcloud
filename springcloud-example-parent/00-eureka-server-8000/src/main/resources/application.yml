@@ -1,9 +1,15 @@
 server:
-  port: 8000
+#  port: 8000
+  port: 8100
+#  port: 8200
+#  port: 8300
 eureka:
   instance:
     # 指定Eureka主机
-    hostname: localhost
+#    hostname: localhost
+    hostname: eureka8100.com
+#    hostname: eureka8200.com
+#    hostname: eureka8300.com
   client:
     # 指定当前主机是否需要向注册中心注册？
     # 不用，因为当前主机是Server，不是Client
@@ -13,7 +19,8 @@ eureka:
     # 暴露服务中心地址
     service-url:
       #      defaultZone: http://localhost:8000/eureka
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
   server:
     # 设置自我保护机制的阈值，默认0.85
     renewal-percent-threshold: 0.75

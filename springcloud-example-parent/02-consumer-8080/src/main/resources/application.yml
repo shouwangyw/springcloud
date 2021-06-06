@@ -10,4 +10,6 @@ eureka:
   # 指定eureka服务中心
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka
+#      defaultZone: http://localhost:8000/eureka
+      # 集群
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
