@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  # 指定当前微服务对外暴露的名称
+  application:
+    name: msc-consumer-depart
+
+eureka:
+  # 指定eureka服务中心
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
