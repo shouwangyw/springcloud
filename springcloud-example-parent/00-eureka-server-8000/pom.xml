@@ -9,22 +9,13 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>01-consumer-8080</artifactId>
+  <artifactId>00-eureka-server-8000</artifactId>
 
   <dependencies>
+    <!-- eureka server的依赖 -->
     <dependency>
-      <groupId>com.yw.springcloud.example</groupId>
-      <artifactId>00-common</artifactId>
-      <version>1.0</version>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>
