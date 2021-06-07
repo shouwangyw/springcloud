@@ -33,6 +33,7 @@
     <module>04-consumer-hystrix-8080</module>
     <module>04-consumer-dashboard-8080</module>
     <module>04-provider-8090</module>
+    <module>04-consumer-fallbackalarm-8080</module>
   </modules>
 
   <dependencyManagement>
