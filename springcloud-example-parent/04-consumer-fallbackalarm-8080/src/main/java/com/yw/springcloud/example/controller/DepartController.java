@@ -122,10 +122,10 @@ public class DepartController {
         // 获取Redis操作对象
         BoundValueOperations<String, String> ops = redisTemplate.boundValueOps(key);
         String value = ops.get();
-        if(value == null) {
+        if (value == null) {
             synchronized (this) {
                 value = ops.get();
-                if(value == null) {
+                if (value == null) {
                     // 使用线程池实现异步短信发送
                     sendFallbackMsg(key);
 //                    value = "短信已发送";

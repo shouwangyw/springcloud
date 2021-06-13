@@ -23,6 +23,7 @@
   <modules>
     <module>00-common</module>
     <module>00-eureka-server-8000</module>
+    <module>00-hystrix-turbine-8888</module>
     <module>01-provider-8090</module>
     <module>01-consumer-8080</module>
     <module>02-provider-8090</module>
@@ -34,6 +35,7 @@
     <module>04-consumer-dashboard-8080</module>
     <module>04-provider-8090</module>
     <module>04-consumer-fallbackalarm-8080</module>
+    <module>04-consumer-turbine-8080</module>
   </modules>
 
   <dependencyManagement>

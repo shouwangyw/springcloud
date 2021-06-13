@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: hystrix-turbine
+# eureka client配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
+# 配置turbine
+turbine:
+  # 指定要监控的微服务名称
+#  app-config: msc-consumer-depart
+  app-config: msc-consumer-depart8080, msc-consumer-depart8081, msc-consumer-depart8082, msc-consumer-depart8083
+  aggregator:
+    # 指定要监控的微服务组，default指定要监控默认组
+#    cluster-config: default
+    cluster-config: group1, group2
+  # 指定要监控抽微服务组名称，默认组名称为'default'
+#  cluster-name-expression: "'default'"
+  cluster-name-expression: metadata['cluster']
+
