@@ -25,6 +25,7 @@
     <module>00-eureka-server-8000</module>
     <module>00-hystrix-turbine-8888</module>
     <module>00-zuul-server-9000</module>
+    <module>00-zuul-gray-9000</module>
     <module>01-provider-8090</module>
     <module>01-consumer-8080</module>
     <module>02-provider-8090</module>
