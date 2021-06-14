@@ -16,7 +16,6 @@
 ### IntelliJ IDEA ###
 .idea
 *.iws
-springcloud-example-parent/springcloud-example-parent.iml
 *.ipr
 
 ### NetBeans ###
