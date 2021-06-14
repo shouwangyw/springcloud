@@ -43,6 +43,8 @@
     <module>05-consumer-zuul-8080</module>
     <module>06-provider-config</module>
     <module>06-consumer-config</module>
+    <module>07-provider-sleuth-8090</module>
+    <module>07-consumer-sleuth-8080</module>
   </modules>
 
   <dependencyManagement>
