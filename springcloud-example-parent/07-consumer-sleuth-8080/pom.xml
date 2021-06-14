@@ -32,6 +32,21 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
+<!--    &lt;!&ndash; sleuth依赖 &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--    </dependency>-->
+    <!-- zipkin客户端依赖，其包含了sleuth依赖 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+    <!-- kafka依赖 -->
+    <dependency>
+      <groupId>org.springframework.kafka</groupId>
+      <artifactId>spring-kafka</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
