@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * @author yangwei
  */
 @EnableFeignClients
-@EnableCircuitBreaker   // 开启熔断器
+//@EnableCircuitBreaker   // 开启熔断器
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class ConsumerConfigApplication {
     public static void main(String[] args) {

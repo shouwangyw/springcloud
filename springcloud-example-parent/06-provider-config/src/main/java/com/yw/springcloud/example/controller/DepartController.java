@@ -46,6 +46,7 @@ public class DepartController {
     // 声明服务发现客户端
     @Autowired
     private DiscoveryClient client;
+
     @GetMapping("/discovery")
     public Object discoveryHandle() {
         // 获取Eureka中所有的微服务名称

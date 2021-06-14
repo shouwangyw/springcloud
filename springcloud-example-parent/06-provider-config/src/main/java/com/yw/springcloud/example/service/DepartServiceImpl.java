@@ -4,6 +4,7 @@ import com.yw.springcloud.example.po.Depart;
 import com.yw.springcloud.example.repository.DepartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,18 +14,18 @@ import java.util.concurrent.TimeUnit;
  * @author yangwei
  */
 @Service
+@RefreshScope
 public class DepartServiceImpl implements DepartService {
     @Autowired
     private DepartRepository repository;
-    // 读取配置文件中的属性值：服务端口号
     @Value("${server.port}")
     private int port;
+    @Value("${suffix}")
+    private String suffix;
 
     @Override
     public boolean saveOne(Depart depart) {
-        // repository.save()可以完成插入和修改
-        // 若操作对象的id==null，则执行插入；若id!=null，则执行修改；
-        // 若操作对象的id!=null但不存在，则执行插入，但插入后该对象id并非是指定的id，而是由DB自动生成
+        depart.setName(depart.getName() + suffix);
         return repository.save(depart) != null;
     }
 
@@ -65,6 +66,6 @@ public class DepartServiceImpl implements DepartService {
     }
 
     private String rename(String name) {
-        return name + " : " + port;
+        return name + suffix;
     }
 }

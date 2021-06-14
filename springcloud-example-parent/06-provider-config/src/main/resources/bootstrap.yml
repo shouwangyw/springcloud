@@ -9,3 +9,12 @@ spring:
       name: application-provider-config
       # 环境选择
       profile: dev
+  # 配置kafka集群地址
+  kafka:
+    bootstrap-servers: 192.168.254.128:9092,192.168.254.130:9092,192.168.254.132:9092
+# 开启 bus-refresh 监控终端
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
