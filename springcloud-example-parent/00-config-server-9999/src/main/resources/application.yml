@@ -1,0 +1,17 @@
+server:
+  port: 9999
+# spring cloud config 配置
+spring:
+  cloud:
+    config:
+      server:
+        git:
+#          uri: git@github.com:shouwangyw/msc-config-center.git
+          # macbook上需要配置为https方式
+          uri: https://github.com/shouwangyw/msc-config-center.git
+          # 获取到远程git库连接的超时时限，默认为5秒
+          timeout: 5
+          # 指定要操作的远程git库的分支，默认master
+          default-label: main
+          # 指定拉取下来的git库位置
+          basedir: /Volumes/F/MyGitHub/msc-config-center

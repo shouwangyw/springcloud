@@ -26,6 +26,8 @@
     <module>00-hystrix-turbine-8888</module>
     <module>00-zuul-server-9000</module>
     <module>00-zuul-gray-9000</module>
+    <module>00-config-server-9999</module>
+    <module>00-eureka-config-server</module>
     <module>01-provider-8090</module>
     <module>01-consumer-8080</module>
     <module>02-provider-8090</module>
@@ -39,6 +41,8 @@
     <module>04-consumer-fallbackalarm-8080</module>
     <module>04-consumer-turbine-8080</module>
     <module>05-consumer-zuul-8080</module>
+    <module>06-provider-config</module>
+    <module>06-consumer-config</module>
   </modules>
 
   <dependencyManagement>

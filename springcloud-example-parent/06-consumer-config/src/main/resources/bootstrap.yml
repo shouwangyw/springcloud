@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      # 指定ConfigServer的地址
+      uri: http://configserver.com:9999
+      # 指定要拉取配置的分库
+      label: main
+      # 指定要从远程读取的配置文件名称【无需扩展名】
+      name: application-consumer-config
+      # 环境选择
+      profile: dev
+

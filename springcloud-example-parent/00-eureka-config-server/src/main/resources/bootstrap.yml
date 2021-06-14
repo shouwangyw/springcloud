@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      # 指定ConfigServer的地址
+      uri: http://configserver.com:9999
+      # config集群地址
+      # uri: http://configserver.com:9999,http://configserver.com:8888
+      # 指定要拉取配置的分库
+      label: main
+      # 指定要从远程读取的配置文件名称【无需扩展名】
+      name: application-eureka-config
+      # 环境选择
+      profile: dev
