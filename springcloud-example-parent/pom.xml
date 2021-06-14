@@ -45,6 +45,8 @@
     <module>06-consumer-config</module>
     <module>07-provider-sleuth-8090</module>
     <module>07-consumer-sleuth-8080</module>
+    <module>08-provider-stream-kafka</module>
+    <module>08-consumer-stream-kafka</module>
   </modules>
 
   <dependencyManagement>

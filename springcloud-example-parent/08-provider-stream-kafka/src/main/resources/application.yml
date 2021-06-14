@@ -1,0 +1,20 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: msc-provider-stream-kafka
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.254.128:9092,192.168.254.130:9092,192.168.254.132:9092
+          # 指定是否自动创建主题
+          auto-create-topics: true
+      bindings:
+        output: # 指定要输出的消息主题及类型
+          destination: persons
+          content-type: text/plain
+        xxx:
+          destination: countries
+          content-type: text/plain

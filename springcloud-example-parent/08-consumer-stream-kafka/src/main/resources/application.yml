@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: msc-stream-kafka
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.254.128:9092,192.168.254.130:9092,192.168.254.132:9092
+          # 指定是否自动创建主题
+          auto-create-topics: true
+      bindings:
+        input:
+          destination: persons
