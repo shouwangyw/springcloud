@@ -1,0 +1,45 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: msc-zuul-server
+  # 连接Redis服务器
+  redis:
+    host: 192.168.254.128
+    post: 6379
+# eureka client配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka,http://eureka8300.com:8300/eureka
+# zuul相关配置
+zuul:
+  # 指定统一的前缀
+  prefix: /api
+  # 指定token被屏蔽
+  sensitive-headers: token
+  # 屏蔽指定的URI
+  ignored-patterns: /**/list/**
+  # 屏蔽所有微服务名称
+  ignored-services: "*"
+  #  # 屏蔽指定微服务名称
+  #  ignored-services: msc-consumer-depart
+  # 设置微服务路由规则
+  routes:
+    # 指定微服务的路由规则
+    # /** : 匹配任意多级路径；/* : 匹配一级路径；/?：匹配一级路径，但该路径仅能包含一个字符
+    msc-consumer-depart: /depart/**
+  # 对限流策略进行配置
+  ratelimit:
+    enabled: true            # 开启限流
+    repository: redis
+    default-policy-list:     # 设置限流策略
+      - limit: 3             # 在指定的单位时间窗口内启动限流的限定值
+        quota: 1             # 指定限流的时间窗口数量
+        refresh-interval: 3  # 限流单位时间窗口
+        type:                # 指定限流查验对象类型
+          - user
+          - origin
+          - url
+
